@@ -1,16 +1,17 @@
 import React, { useEffect } from 'react';
 import Header from "./components/Header/Header";
+import {useTelegram} from "./components/hooks/useTelegram";
 // window.Telegram.WebApp()
-const tg=window.Telegram.WebApp;
+
 function App(){
-  useEffect(()=>{
+    const {tg, onToogleButton}=useTelegram();
+    useEffect(()=>{
     tg.ready();
   }, [])
 
     return (
       <div className="App">
-        <Header/>
-        Test
+        <button onClick={onToogleButton}></button>
       </div>
     );
 }
