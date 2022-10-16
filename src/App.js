@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react';
 import {useTelegram} from "./components/hooks/useTelegram";
 import Header from "./components/Header/Header";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import ProductList from "./components/ProductList/ProductList";
+import Forms from "./components/Form/Forms";
+
 // window.Telegram.WebApp()
 
 function App(){
@@ -10,10 +14,19 @@ function App(){
   }, [])
 
     return (
+
       <div className="App">
+          Hello
           <Header/>
-        <button onClick={onTogleButton}>Togle</button>
+
+          <Routes>
+              <Route path={'/'} element={<ProductList />} />
+              <Route path={'/form'} element={<Forms />} />
+          </Routes>
+
+
       </div>
+
     );
 }
 
