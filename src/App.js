@@ -17,7 +17,7 @@ function App(){
 
       <div className="App">
           Hello
-          {/*<Header/>*/}
+          <Header/>
 
           <Routes>
               <Route path={'/'} element={<ProductList />} />
